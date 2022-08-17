@@ -8,6 +8,7 @@ TagManager:
   - catchZone
   - gameManager
   - hook
+  - obstacle
   layers:
   - Default
   - TransparentFX
