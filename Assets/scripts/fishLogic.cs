@@ -13,10 +13,13 @@ public class fishLogic : MonoBehaviour
 
     private GameObject catchZone;
 
+    [SerializeField] private LayerMask fishLayer;
+
     // Start is called before the first frame update
     void Start()
     {
         catchZone = GameObject.FindGameObjectWithTag("catchZone");
+        Physics.IgnoreLayerCollision(fishLayer, fishLayer, true);
     }
 
     // Update is called once per frame
@@ -33,15 +36,22 @@ public class fishLogic : MonoBehaviour
         
         if(collision.gameObject.CompareTag("hook"))
         {
-            Debug.Log("collided with fish!");
-            //gameObject.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-            gameObject.transform.eulerAngles = new Vector3(0f, 0f, -90f);
-            isCaught = true;
-            gameObject.transform.position = new Vector3(0f, collision.gameObject.transform.position.y, 0f);
-            hook = collision.gameObject;
-            collision.gameObject.GetComponent<catchLogic>().hasFish = true;
-            collision.gameObject.GetComponent<catchLogic>().cuaghtFish = this.gameObject;
+            if(collision.gameObject.GetComponent<catchLogic>().hasBait == true)
+            {
+                Debug.Log("collided with fish!");
+                //gameObject.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                gameObject.transform.eulerAngles = new Vector3(0f, 0f, -90f);
+                isCaught = true;
+                gameObject.transform.position = new Vector3(0f, collision.gameObject.transform.position.y, 0f);
+                hook = collision.gameObject;
+                collision.gameObject.GetComponent<catchLogic>().hasFish = true;
+                collision.gameObject.GetComponent<catchLogic>().cuaghtFish = this.gameObject;
+            }
+           
             
         }
     }
+
+
+    
 }

@@ -9,6 +9,8 @@ public class catchLogic : MonoBehaviour
     [SerializeField]
     public bool hasFish;
 
+    [SerializeField] public bool hasBait;
+
     public GameObject cuaghtFish;
     // Start is called before the first frame update
     void Start()
