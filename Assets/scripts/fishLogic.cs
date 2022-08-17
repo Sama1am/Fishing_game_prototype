@@ -40,6 +40,7 @@ public class fishLogic : MonoBehaviour
             {
                 Debug.Log("collided with fish!");
                 //gameObject.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 gameObject.transform.eulerAngles = new Vector3(0f, 0f, -90f);
                 isCaught = true;
                 gameObject.transform.position = new Vector3(0f, collision.gameObject.transform.position.y, 0f);

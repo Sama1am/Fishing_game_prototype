@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5355282229705826514}
   - component: {fileID: 5495295186512151537}
   - component: {fileID: -6360015326582709941}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fish2
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
