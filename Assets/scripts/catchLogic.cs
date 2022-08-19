@@ -10,6 +10,7 @@ public class catchLogic : MonoBehaviour
     public bool hasFish;
 
     [SerializeField] public bool hasBait;
+    [SerializeField] public int baitNum;
 
     public GameObject cuaghtFish;
     // Start is called before the first frame update
@@ -17,15 +18,28 @@ public class catchLogic : MonoBehaviour
     {
         GM = GameObject.FindGameObjectWithTag("gameManager").GetComponent<GameManager>();
         hasFish = false;
+        baitNum = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(baitNum > 0)
+        {
+            hasBait = true;
+        }
+        else if(baitNum <= 0)
+        {
+            hasBait = false;
+            baitNum = 0;
+        }
     }
 
-
+    void addBait()
+    {
+        hasBait = true;
+        baitNum -= 1;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -53,6 +67,16 @@ public class catchLogic : MonoBehaviour
                 }
 
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("obstacle"))
+        {
+            hasBait = false;
+            baitNum -= 1;
+            Destroy(collision.gameObject);
         }
     }
 }

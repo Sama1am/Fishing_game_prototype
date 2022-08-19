@@ -9,6 +9,8 @@ TagManager:
   - gameManager
   - hook
   - obstacle
+  - left
+  - right
   layers:
   - Default
   - TransparentFX

@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 11400000, guid: 55723a19380e3934f91f49d235939734, type: 2}
+  isOther: 1
   isCaught: 0
   fishLayer:
     serializedVersion: 2
@@ -171,7 +172,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &8493395569632918306
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -185,6 +186,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.15810293, y: -0.21279947}
-  m_Size: {x: 0.7008862, y: 0.5223234}
+  m_Offset: {x: 0.061122913, y: -0.037490394}
+  m_Size: {x: 0.3428106, y: 0.17170912}
   m_Direction: 1

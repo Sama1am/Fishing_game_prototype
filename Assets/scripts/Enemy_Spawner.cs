@@ -32,13 +32,14 @@ public class Enemy_Spawner : MonoBehaviour
             spawnTime = 0;
         }
     }
-        void SpawnEnemy()
+    
+    void SpawnEnemy()
     {
         index = Random.Range(0, spawnPoints.Length);
         currentPoint = spawnPoints[index];
         float timeBetweenSpawns = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
 
-        if (canSpawn)
+        if(canSpawn)
         {
             Rigidbody2D fish = Instantiate(enemies[Random.Range(0, enemies.Length)], currentPoint.transform.position, Quaternion.identity);
             fish.transform.parent = currentPoint.transform;
