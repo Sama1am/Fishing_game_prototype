@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 11400000, guid: 2b3677cd6e521ac45a5ebfea1a6a8a04, type: 2}
+  _isOther: 0
   isCaught: 0
   fishLayer:
     serializedVersion: 2
@@ -104,6 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1594200347782081915}
   enemy_Spawner: {fileID: 0}
+  _minSpeed: 3
+  _maxSpeed: 10
 --- !u!1 &1594200347956600477
 GameObject:
   m_ObjectHideFlags: 0

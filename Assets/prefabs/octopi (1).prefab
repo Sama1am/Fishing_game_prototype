@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 11400000, guid: 4dc30cf53c81445408f879f919525d39, type: 2}
-  isOther: 1
+  _isOther: 1
   isCaught: 0
   fishLayer:
     serializedVersion: 2
@@ -189,3 +189,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4851465076928734866}
   enemy_Spawner: {fileID: 0}
+  _minSpeed: 3
+  _maxSpeed: 10

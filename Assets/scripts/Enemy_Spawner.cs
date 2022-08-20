@@ -41,9 +41,11 @@ public class Enemy_Spawner : MonoBehaviour
 
         if(canSpawn)
         {
+
             Rigidbody2D fish = Instantiate(enemies[Random.Range(0, enemies.Length)], currentPoint.transform.position, Quaternion.identity);
             fish.transform.parent = currentPoint.transform;
             enemiesInGame++;
+
         }
 
         Invoke("SpawnEnemy", timeBetweenSpawns);

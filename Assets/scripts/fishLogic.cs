@@ -6,7 +6,8 @@ public class fishLogic : MonoBehaviour
 {
 
     [SerializeField] public fish fish;
-    [SerializeField] private bool isOther;
+    [SerializeField] private bool _isOther;
+    
 
     public bool isCaught;
 
@@ -39,21 +40,26 @@ public class fishLogic : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("hook"))
         {
-            if (collision.gameObject.GetComponent<catchLogic>().hasBait == true)
+            if(collision.gameObject.GetComponent<catchLogic>().hasFish == false)
             {
-                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                if (!isOther)
+                if (collision.gameObject.GetComponent<catchLogic>().hasBait == true)
                 {
-                    gameObject.transform.eulerAngles = new Vector3(0f, 0f, -90f);
+                    gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    if (!_isOther)
+                    {
+                        gameObject.transform.eulerAngles = new Vector3(0f, 0f, -90f);
+                    }
+                    //Debug.Log("collided with fish!");
+
+                    isCaught = true;
+                    gameObject.transform.position = new Vector3(0f, collision.gameObject.transform.position.y, 0f);
+                    hook = collision.gameObject;
+                    collision.gameObject.GetComponent<catchLogic>().hasFish = true;
+                    collision.gameObject.GetComponent<catchLogic>().cuaghtFish = this.gameObject;
+                    
                 }
-                Debug.Log("collided with fish!");
-                
-                isCaught = true;
-                gameObject.transform.position = new Vector3(0f, collision.gameObject.transform.position.y, 0f);
-                hook = collision.gameObject;
-                collision.gameObject.GetComponent<catchLogic>().hasFish = true;
-                collision.gameObject.GetComponent<catchLogic>().cuaghtFish = this.gameObject;
             }
+            
 
 
         }
