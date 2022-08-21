@@ -65,6 +65,7 @@ public class LineLogic : MonoBehaviour
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //float ypos = transform.position.y;
             hook.transform.position = new Vector3(transform.position.x, worldPosition.y, transform.position.z);
+            
             //clamps the y position of the hook so it cant go above a certain point or below a certain point
             hook.transform.position = new Vector3(transform.position.x, Mathf.Clamp(hook.transform.position.y, -4.68f, 3.35f), transform.position.z);
             timeElapsed = 0;

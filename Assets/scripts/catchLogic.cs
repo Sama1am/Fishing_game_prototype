@@ -13,6 +13,8 @@ public class catchLogic : MonoBehaviour
     [SerializeField] public bool hasBait;
     [SerializeField] public int baitNum;
     [SerializeField] private Transform _catchZone;
+    [SerializeField] private SpriteRenderer _SR;
+    [SerializeField] private Sprite[] _hookSprites;
 
     public GameObject cuaghtFish;
     // Start is called before the first frame update
@@ -26,23 +28,21 @@ public class catchLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(baitNum > 0)
-        {
-            hasBait = true;
-        }
-        else if(baitNum <= 0)
-        {
-            hasBait = false;
-            baitNum = 0;
-        }
+        
 
         //catchFish();
     }
 
-    void addBait()
+    public void addBait()
     {
-        hasBait = true;
-        baitNum -= 1;
+        if(!hasBait)
+        {
+            hasBait = true;
+            baitNum -= 1;
+            _SR.sprite = _hookSprites[1];
+            Debug.Log("SHOULD CHANGE HOOK SPRITE");
+        }
+       
     }
 
 
@@ -75,67 +75,29 @@ public class catchLogic : MonoBehaviour
       
     }
 
+
+
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-       
-    }
-
-    
-
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("catchZone"))
-    //    {
-    //        //Debug.Log("IN CATCH ZONE!");
-    //        if(Input.GetMouseButtonDown(0))
-    //        {
-    //            Debug.Log("pushed the mouse button!");
-
-    //            if (hasFish)
-    //            {
-    //                Debug.Log("we have fish will destroy");
-    //                GM.points += cuaghtFish.GetComponent<fishLogic>().fish.value;
-    //                cuaghtFish.GetComponent<fishLogic>().isCaught = false;
-    //                Destroy(cuaghtFish);
-    //                hasFish = false;
-    //            }
-
-    //        }
-    //    }
-    //}
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.CompareTag("obstacle"))
-    //    {
-    //        hasBait = false;
-    //        baitNum -= 1;
-    //        Destroy(collision.gameObject);
-    //    }
-
-    //    if(collision.gameObject.CompareTag("catchZone"))
-    //    {
-    //        if(hasFish)
-    //        {
-    //            Debug.Log("we have fish will destroy");
-    //            GM.points += cuaghtFish.GetComponent<fishLogic>().fish.value;
-    //            cuaghtFish.GetComponent<fishLogic>().isCaught = false;
-    //            Destroy(cuaghtFish);
-    //            hasFish = false;
-    //        }
-    //    }
-
-    //}
-
-
-    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("obstacle"))
         {
-            hasBait = false;
-            baitNum -= 1;
-            Destroy(collision.gameObject);
+            if(hasFish)
+            {
+                hasBait = false;
+                Destroy(collision.gameObject);
+                Destroy(cuaghtFish);
+                hasFish = false;
+                _SR.sprite = _hookSprites[0];
+               
+            }
+            else
+            {
+                hasBait = false;
+                Destroy(collision.gameObject);
+                _SR.sprite = _hookSprites[0];
+            }
         }
+           
 
         if (collision.gameObject.CompareTag("catchZone"))
         {
@@ -149,4 +111,6 @@ public class catchLogic : MonoBehaviour
             }
         }
     }
+
+    
 }

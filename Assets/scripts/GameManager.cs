@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         setScoreUI();
         setbaitUi();
+        gameOver();
     }
 
 
@@ -49,6 +51,14 @@ public class GameManager : MonoBehaviour
             //buy bait 
             points -= baitCost;
             CL.baitNum++; 
+        }
+    }
+
+    public void gameOver()
+    {
+        if((points >= 0) && (CL.baitNum >= 0) && (CL.hasBait == false))
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }
