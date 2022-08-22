@@ -134,8 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3376833144245232412}
   enemy_Spawner: {fileID: 0}
-  _minSpeed: 3
-  _maxSpeed: 10
+  _minSpeed: 2
+  _maxSpeed: 4
   isLeft: 0
 --- !u!114 &8997806300710126680
 MonoBehaviour:

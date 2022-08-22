@@ -10,13 +10,14 @@ public class LineLogic : MonoBehaviour
     private LineRenderer LR;
 
     
-    private Transform[] points;
+    public Transform[] points;
 
     [SerializeField] Transform[] linePoint;
     [SerializeField] GameObject hook;
     [SerializeField] private float _interp;
     [SerializeField] private float _speed;
-    private float timeElapsed;
+    private float _timeElapsed;
+    private float _time;
     float rate = 1f;
     
     // Start is called before the first frame update
@@ -62,13 +63,23 @@ public class LineLogic : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
+            var currentPos = hook.transform.position;
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //float ypos = transform.position.y;
-            hook.transform.position = new Vector3(transform.position.x, worldPosition.y, transform.position.z);
+           
+            //hook.transform.position = new Vector3(transform.position.x, worldPosition.y, transform.position.z);
             
+            if(_time > 1)
+            {
+                _time = 1;
+            }
+
+            hook.transform.position = Vector3.Lerp(new Vector3(0f, currentPos.y, 0f), new Vector3(0f, worldPosition.y, 0f), _time);
+            _time += Time.deltaTime / _interp;
+
+
             //clamps the y position of the hook so it cant go above a certain point or below a certain point
             hook.transform.position = new Vector3(transform.position.x, Mathf.Clamp(hook.transform.position.y, -4.68f, 3.35f), transform.position.z);
-            timeElapsed = 0;
+            _timeElapsed = 0;
         }
         else if((transform.position.y < points[0].position.y))
         {
@@ -78,18 +89,20 @@ public class LineLogic : MonoBehaviour
            // var dir = (points[0].position - hook.transform.position).normalized;
 
             //hook.transform.position += dir * _speed * Time.deltaTime;
-            if(timeElapsed > 1)
+            if(_timeElapsed > 1)
             {
-                timeElapsed = 1;
+                _timeElapsed = 1;
             }
-            hook.transform.position = Vector3.Lerp(currentPos, points[0].position, timeElapsed);
+            hook.transform.position = Vector3.Lerp(currentPos, points[0].position, _timeElapsed);
 
 
             //hook.transform.position = new Vector3(transform.position.x, transform.position.y + (Time.deltaTime*rate), transform.position.z);
-            timeElapsed += Time.deltaTime / _interp;
+            _timeElapsed += Time.deltaTime / _interp;
+            _time = 0;
         }else if (Input.GetMouseButtonUp(0))
         {
-            timeElapsed = 0;
+            _timeElapsed = 0;
+            _time = 0;
         }
     }
 
@@ -108,7 +121,7 @@ public class LineLogic : MonoBehaviour
                     hook.transform.position = new Vector3(transform.position.x, worldPosition.y, transform.position.z);
                     //clamps the y position of the hook so it cant go above a certain point or below a certain point
                     hook.transform.position = new Vector3(transform.position.x, Mathf.Clamp(hook.transform.position.y, -4.61f, 1.85f), transform.position.z);
-                    timeElapsed = 0;
+                    _timeElapsed = 0;
                 }
             }
             else if ((transform.position.y < points[0].position.y))
@@ -119,19 +132,19 @@ public class LineLogic : MonoBehaviour
                 // var dir = (points[0].position - hook.transform.position).normalized;
 
                 //hook.transform.position += dir * _speed * Time.deltaTime;
-                if (timeElapsed > 1)
+                if (_timeElapsed > 1)
                 {
-                    timeElapsed = 1;
+                    _timeElapsed = 1;
                 }
-                hook.transform.position = Vector3.Lerp(currentPos, points[0].position, timeElapsed);
+                hook.transform.position = Vector3.Lerp(currentPos, points[0].position, _timeElapsed);
 
 
                 //hook.transform.position = new Vector3(transform.position.x, transform.position.y + (Time.deltaTime*rate), transform.position.z);
-                timeElapsed += Time.deltaTime / _interp;
+                _timeElapsed += Time.deltaTime / _interp;
             }
             else if (Input.GetMouseButtonUp(0))
             {
-                timeElapsed = 0;
+                _timeElapsed = 0;
             }
         }
 

@@ -17,6 +17,17 @@ public class catchLogic : MonoBehaviour
     [SerializeField] private Sprite[] _hookSprites;
 
     public GameObject cuaghtFish;
+
+
+    #region QTE
+    [SerializeField] private float _numNeeded;
+    [SerializeField] private float _currentNum;
+    [SerializeField] private float _time;
+    [SerializeField] private float _currentTime;
+
+
+
+    #endregion
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +54,27 @@ public class catchLogic : MonoBehaviour
             Debug.Log("SHOULD CHANGE HOOK SPRITE");
         }
        
+    }
+
+
+    public void quickTimeEvent()
+    {
+        _currentTime = _time;
+        _currentTime -= Time.deltaTime;
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            _currentNum++;
+        }
+
+        if((_currentTime <= 0) && (_currentNum >= _numNeeded))
+        {
+            //win 
+        }
+        else if((_currentTime <= 0) && (_currentNum < _numNeeded))
+        {
+            //loose 
+        }
     }
 
 

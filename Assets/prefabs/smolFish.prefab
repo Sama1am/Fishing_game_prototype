@@ -106,7 +106,7 @@ MonoBehaviour:
   enemy: {fileID: 1594200347782081915}
   enemy_Spawner: {fileID: 0}
   _minSpeed: 3
-  _maxSpeed: 10
+  _maxSpeed: 5
   isLeft: 0
 --- !u!1 &1594200347956600477
 GameObject:

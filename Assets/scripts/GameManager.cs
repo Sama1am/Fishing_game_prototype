@@ -12,8 +12,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _scoreTxt;
     [SerializeField] private TextMeshProUGUI _baitTxt;
+    [SerializeField] private TextMeshProUGUI _baitCostTxt;
 
-    [SerializeField] private int baitCost;
+   [SerializeField] private int baitCost;
 
     catchLogic CL;
 
@@ -29,7 +30,8 @@ public class GameManager : MonoBehaviour
     {
         setScoreUI();
         setbaitUi();
-        gameOver();
+        setBaitCostUI();
+        //gameOver();
     }
 
 
@@ -40,7 +42,12 @@ public class GameManager : MonoBehaviour
 
     void setbaitUi()
     {
-        _baitTxt.text = CL.baitNum.ToString();
+        _baitTxt.text = "X " + CL.baitNum.ToString();
+    }
+    
+    void setBaitCostUI()
+    {
+        _baitCostTxt.text = "Bait: " + baitCost.ToString();
     }
 
 

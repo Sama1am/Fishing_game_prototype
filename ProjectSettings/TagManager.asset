@@ -11,6 +11,8 @@ TagManager:
   - obstacle
   - left
   - right
+  - line
+  - crab
   layers:
   - Default
   - TransparentFX
