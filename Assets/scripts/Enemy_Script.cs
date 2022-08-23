@@ -30,6 +30,7 @@ public class Enemy_Script : MonoBehaviour
     {
        if(enemy.velocity.x > 0 && gameObject.transform.rotation.y != -180f)
        {
+            Debug.Log("flipping GAME OBJECT!");
             gameObject.transform.eulerAngles = new Vector3(0f, -180f, 0f);
        }
     }

@@ -21,13 +21,13 @@ public class fishLogic : MonoBehaviour
     void Start()
     {
         catchZone = GameObject.FindGameObjectWithTag("catchZone");
-        Physics.IgnoreLayerCollision(fishLayer, fishLayer, true);
+        Physics2D.IgnoreLayerCollision(3, 3, true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Physics.IgnoreLayerCollision(fishLayer, fishLayer, true);
+        
         if (isCaught)
         {
             gameObject.transform.position = new Vector3(0f, hook.transform.position.y, 0f);

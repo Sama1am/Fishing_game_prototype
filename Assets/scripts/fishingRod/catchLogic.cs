@@ -7,14 +7,19 @@ public class catchLogic : MonoBehaviour
 {
     GameManager GM;
 
-    [SerializeField]
-    public bool hasFish;
-
+    [SerializeField] public bool hasFish;
     [SerializeField] public bool hasBait;
     [SerializeField] public int baitNum;
     [SerializeField] private Transform _catchZone;
     [SerializeField] private SpriteRenderer _SR;
     [SerializeField] private Sprite[] _hookSprites;
+
+    #region SoundStuff
+    [Header("sound stuff")]
+    [SerializeField] private AudioSource _AS;
+    [SerializeField] private AudioClip _catchSound;
+    #endregion
+
 
     public GameObject cuaghtFish;
 
@@ -31,6 +36,8 @@ public class catchLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hasFish = false;
+        hasBait = true;
         GM = GameObject.FindGameObjectWithTag("gameManager").GetComponent<GameManager>();
         hasFish = false;
         baitNum = 3;
@@ -40,7 +47,14 @@ public class catchLogic : MonoBehaviour
     void Update()
     {
         
-
+        if(hasFish)
+        {
+            Physics2D.IgnoreLayerCollision(6, 3, true);
+        }
+        else
+        {
+            Physics2D.IgnoreLayerCollision(6, 3, false);
+        }
         //catchFish();
     }
 
@@ -136,6 +150,7 @@ public class catchLogic : MonoBehaviour
             if (hasFish)
             {
                 Debug.Log("we have fish will destroy");
+                _AS.PlayOneShot(_catchSound, 1f);
                 GM.points += cuaghtFish.GetComponent<fishLogic>().fish.value;
                 cuaghtFish.GetComponent<fishLogic>().isCaught = false;
                 Destroy(cuaghtFish);
