@@ -16,6 +16,9 @@ public class Enemy_Spawner : MonoBehaviour
     public int enemiesInGame;
     public bool spawnerDone;
 
+    public bool spawnedCrab;
+    [SerializeField] private bool _isCrabSpawner;
+
     private void Start()
     {
         Invoke("SpawnEnemy", 0.5f);
@@ -41,10 +44,27 @@ public class Enemy_Spawner : MonoBehaviour
 
         if(canSpawn)
         {
-
-            Rigidbody2D fish = Instantiate(enemies[Random.Range(0, enemies.Length)], currentPoint.transform.position, Quaternion.identity);
-            fish.transform.parent = currentPoint.transform;
-            enemiesInGame++;
+            if(_isCrabSpawner)
+            {
+                if(spawnedCrab)
+                {
+                    
+                }
+                else
+                {
+                    Rigidbody2D fish = Instantiate(enemies[Random.Range(0, enemies.Length)], currentPoint.transform.position, Quaternion.identity);
+                    fish.transform.parent = currentPoint.transform;
+                    enemiesInGame++;
+                    spawnedCrab = true;
+                }
+            }
+            else
+            {
+                Rigidbody2D fish = Instantiate(enemies[Random.Range(0, enemies.Length)], currentPoint.transform.position, Quaternion.identity);
+                fish.transform.parent = currentPoint.transform;
+                enemiesInGame++;
+            }
+            
 
         }
 

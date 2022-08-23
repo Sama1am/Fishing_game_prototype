@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 5837942328816027703}
   m_Layer: 3
   m_Name: bomb
-  m_TagString: obstacle
+  m_TagString: bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,4 +172,4 @@ MonoBehaviour:
   enemy_Spawner: {fileID: 0}
   _minSpeed: 3
   _maxSpeed: 8
-  isLeft: 0
+  _isCrab: 0

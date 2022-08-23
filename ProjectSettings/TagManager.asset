@@ -13,6 +13,7 @@ TagManager:
   - right
   - line
   - crab
+  - bomb
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Water
   - UI
   - hook
-  - 
+  - spawner
   - 
   - 
   - 

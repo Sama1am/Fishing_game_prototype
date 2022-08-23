@@ -13,12 +13,17 @@ public class cutLineLogic : MonoBehaviour
 
     [SerializeField] private float distFromLine;
 
+    [SerializeField] private AudioSource _AS;
+    [SerializeField] private AudioClip _snipSound;
+
     private bool _didCutLine;
     // Start is called before the first frame update
 
   
     void Start()
     {
+        //Debug.Log(gameObject.transform.rotation.y);
+        Physics2D.IgnoreLayerCollision(3, 3, true);
         _didCutLine = false;
         _hook = GameObject.FindGameObjectWithTag("hook");
         _line = GameObject.FindGameObjectWithTag("line");
@@ -45,6 +50,7 @@ public class cutLineLogic : MonoBehaviour
     {
         if(gameObject.transform.position.y > _hook.transform.position.y)
         {
+            _AS.PlayOneShot(_snipSound, 1f);
             _hook.GetComponentInChildren<SpriteRenderer>().sprite = null;
             //_hook.GetComponent<SpriteRenderer>().sprite = null;
             _hook.GetComponent<catchLogic>().hasBait = false;
