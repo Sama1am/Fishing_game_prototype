@@ -459,6 +459,37 @@ Transform:
   m_Father: {fileID: 2050401514}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &166890410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166890411}
+  m_Layer: 0
+  m_Name: topLine
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &166890411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166890410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1725845420}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204906594
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +562,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5474625, y: 10.053835}
   m_EdgeRadius: 0
+--- !u!1 &267518754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 267518755}
+  m_Layer: 0
+  m_Name: maxBot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &267518755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267518754}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337922772
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +801,7 @@ MonoBehaviour:
   - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
   - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
   - {fileID: 2941233175185989652, guid: f2c69d5e24cbfb549bdce24872a5827b, type: 3}
+  - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
   minTimeBetweenSpawns: 1
   maxTimeBetweenSpawns: 3
   canSpawn: 1
@@ -1348,6 +1411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LR: {fileID: 645219309}
   points: []
+  topLine: {fileID: 166890411}
   linePoint:
   - {fileID: 988949024}
   - {fileID: 623024489}
@@ -2798,6 +2862,7 @@ Transform:
   - {fileID: 1946569475}
   - {fileID: 645219310}
   - {fileID: 623024489}
+  - {fileID: 166890411}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

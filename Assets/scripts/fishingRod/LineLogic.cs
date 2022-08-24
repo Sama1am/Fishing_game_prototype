@@ -12,15 +12,17 @@ public class LineLogic : MonoBehaviour
     
     public Transform[] points;
 
+    [SerializeField] public Transform topLine;
     [SerializeField] Transform[] linePoint;
     [SerializeField] GameObject hook;
     [SerializeField] private float _interp;
     [SerializeField] private float _speed;
+    
     private float _timeElapsed;
     private float _time;
 
     public bool isCut;
-    float rate = 1f;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -50,16 +52,7 @@ public class LineLogic : MonoBehaviour
     }
 
     //gets the position of the mouse and then sets the hook to its y postion 
-    void inputControl()
-    {
-
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //float ypos = transform.position.y;
-        hook.transform.position = new Vector3(transform.position.x, worldPosition.y, transform.position.z);
-        //clamps the y position of the hook so it cant go above a certain point or below a certain point
-        hook.transform.position = new Vector3(transform.position.x, Mathf.Clamp(hook.transform.position.y, -4.61f, 1.85f), transform.position.z);
-    }
-
+    
 
     void pcControls()
     {
@@ -82,7 +75,7 @@ public class LineLogic : MonoBehaviour
 
 
                 //clamps the y position of the hook so it cant go above a certain point or below a certain point
-                hook.transform.position = new Vector3(transform.position.x, Mathf.Clamp(hook.transform.position.y, -4.68f, 3.35f), transform.position.z);
+                hook.transform.position = new Vector3(transform.position.x, Mathf.Clamp(hook.transform.position.y, -7.1f, 4.15f), transform.position.z);
                 _timeElapsed = 0;
             }
             
@@ -99,7 +92,7 @@ public class LineLogic : MonoBehaviour
             {
                 _timeElapsed = 1;
             }
-            hook.transform.position = Vector3.Lerp(currentPos, points[0].position, _timeElapsed);
+            hook.transform.position = Vector3.Lerp(currentPos, topLine.transform.position, _timeElapsed);
 
 
             //hook.transform.position = new Vector3(transform.position.x, transform.position.y + (Time.deltaTime*rate), transform.position.z);

@@ -166,6 +166,19 @@ public class catchLogic : MonoBehaviour
                 hasFish = false;
             }
         }
+
+        if(collision.gameObject.CompareTag("urchen"))
+        {
+
+
+            _Line.GetComponent<LineLogic>().isCut = true;
+            gameObject.GetComponentInChildren<SpriteRenderer>().sprite = null;
+            hasBait = false;
+            
+            
+           
+         
+        }
     }
 
     

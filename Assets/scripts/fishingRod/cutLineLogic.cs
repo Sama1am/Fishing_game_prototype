@@ -56,7 +56,7 @@ public class cutLineLogic : MonoBehaviour
             //_hook.GetComponent<SpriteRenderer>().sprite = null;
             _hook.GetComponent<catchLogic>().hasBait = false;
             //_hook.GetComponent<catchLogic>().baitNum -= 1;
-            _hook.transform.position = _line.GetComponent<LineLogic>().points[0].transform.position;
+            _hook.transform.position = _line.GetComponent<LineLogic>().topLine.transform.position;
             _didCutLine = true;
         }
         
