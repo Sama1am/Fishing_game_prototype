@@ -50,6 +50,7 @@ public class cutLineLogic : MonoBehaviour
     {
         if(gameObject.transform.position.y > _hook.transform.position.y)
         {
+            _line.GetComponent<LineLogic>().isCut = true;
             _AS.PlayOneShot(_snipSound, 1f);
             _hook.GetComponentInChildren<SpriteRenderer>().sprite = null;
             //_hook.GetComponent<SpriteRenderer>().sprite = null;

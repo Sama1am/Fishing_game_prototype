@@ -22,7 +22,7 @@ public class catchLogic : MonoBehaviour
 
 
     public GameObject cuaghtFish;
-    
+    private GameObject _Line;
 
     #region QTE
     [SerializeField] private float _numNeeded;
@@ -36,7 +36,7 @@ public class catchLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _Line = GameObject.FindGameObjectWithTag("line");
         hasFish = false;
         hasBait = true;
         GM = GameObject.FindGameObjectWithTag("gameManager").GetComponent<GameManager>();
@@ -63,6 +63,7 @@ public class catchLogic : MonoBehaviour
     {
         if(!hasBait)
         {
+            _Line.GetComponent<LineLogic>().isCut = false;
             hasBait = true;
             baitNum -= 1;
             _SR.sprite = _hookSprites[1];
@@ -131,7 +132,7 @@ public class catchLogic : MonoBehaviour
             if(hasFish)
             {
                 hasBait = false;
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
                 Destroy(cuaghtFish);
                 hasFish = false;
                 _SR.sprite = _hookSprites[0];
@@ -140,7 +141,7 @@ public class catchLogic : MonoBehaviour
             else
             {
                 hasBait = false;
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
                 _SR.sprite = _hookSprites[0];
             }
         }

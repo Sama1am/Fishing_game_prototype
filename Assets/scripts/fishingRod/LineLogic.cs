@@ -18,6 +18,8 @@ public class LineLogic : MonoBehaviour
     [SerializeField] private float _speed;
     private float _timeElapsed;
     private float _time;
+
+    public bool isCut;
     float rate = 1f;
     
     // Start is called before the first frame update
@@ -63,23 +65,27 @@ public class LineLogic : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
-            var currentPos = hook.transform.position;
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-           
-            //hook.transform.position = new Vector3(transform.position.x, worldPosition.y, transform.position.z);
-            
-            if(_time > 1)
+            if(!isCut)
             {
-                _time = 1;
+                var currentPos = hook.transform.position;
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                //hook.transform.position = new Vector3(transform.position.x, worldPosition.y, transform.position.z);
+
+                if (_time > 1)
+                {
+                    _time = 1;
+                }
+
+                hook.transform.position = Vector3.Lerp(new Vector3(0f, currentPos.y, 0f), new Vector3(0f, worldPosition.y, 0f), _time);
+                _time += Time.deltaTime / _interp;
+
+
+                //clamps the y position of the hook so it cant go above a certain point or below a certain point
+                hook.transform.position = new Vector3(transform.position.x, Mathf.Clamp(hook.transform.position.y, -4.68f, 3.35f), transform.position.z);
+                _timeElapsed = 0;
             }
-
-            hook.transform.position = Vector3.Lerp(new Vector3(0f, currentPos.y, 0f), new Vector3(0f, worldPosition.y, 0f), _time);
-            _time += Time.deltaTime / _interp;
-
-
-            //clamps the y position of the hook so it cant go above a certain point or below a certain point
-            hook.transform.position = new Vector3(transform.position.x, Mathf.Clamp(hook.transform.position.y, -4.68f, 3.35f), transform.position.z);
-            _timeElapsed = 0;
+            
         }
         else if((transform.position.y < points[0].position.y))
         {

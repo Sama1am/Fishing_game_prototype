@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1594200347782081914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.653, y: -4.087, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1594200347956600419}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2ea0a466419784b80409916c9d5a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: {fileID: 11400000, guid: 2b3677cd6e521ac45a5ebfea1a6a8a04, type: 2}
+  fish: {fileID: 11400000, guid: d117459a035782144ad62eb8d90db2ca, type: 2}
   _isOther: 0
   isCaught: 0
   fishLayer:
@@ -107,7 +107,7 @@ MonoBehaviour:
   enemy_Spawner: {fileID: 0}
   _minSpeed: 3
   _maxSpeed: 5
-  isLeft: 0
+  _isCrab: 0
 --- !u!1 &1594200347956600477
 GameObject:
   m_ObjectHideFlags: 0
