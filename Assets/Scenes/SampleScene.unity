@@ -591,7 +591,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337922772
 GameObject:
@@ -796,15 +796,11 @@ MonoBehaviour:
   - {fileID: 7612294402226152775, guid: 0df70dfa173cc6449990b8cb893194f8, type: 3}
   - {fileID: 1730804708179016074, guid: 87987a00c0431c94ba066c9b367c0e9a, type: 3}
   - {fileID: 4851465076928734866, guid: 6ec1bf35dd9a690459f934d8d4031138, type: 3}
-  - {fileID: 5342758745309049327, guid: d421be129e7103c40a0c22f859d7c5db, type: 3}
-  - {fileID: 2941233175185989652, guid: f2c69d5e24cbfb549bdce24872a5827b, type: 3}
-  - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
-  - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
-  - {fileID: 2941233175185989652, guid: f2c69d5e24cbfb549bdce24872a5827b, type: 3}
   minTimeBetweenSpawns: 1
   maxTimeBetweenSpawns: 3
   canSpawn: 1
   spawnTime: 30
+  spawnTimeStartTime: 30
   enemiesInGame: 0
   spawnerDone: 0
   spawnedCrab: 0
@@ -866,7 +862,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1767,6 +1763,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873413412}
   m_CullTransparentMesh: 1
+--- !u!1 &906022556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 906022558}
+  - component: {fileID: 906022557}
+  m_Layer: 0
+  m_Name: 'BadGuySpawnerManager '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &906022557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906022556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc429f08dfce8b48ab5aa4a4cc40fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 159234974}
+  - {fileID: 397783165}
+  - {fileID: 972600535}
+  - {fileID: 2143109453}
+  currentPoint: {fileID: 0}
+  enemies:
+  - {fileID: 5342758745309049327, guid: d421be129e7103c40a0c22f859d7c5db, type: 3}
+  - {fileID: 2941233175185989652, guid: f2c69d5e24cbfb549bdce24872a5827b, type: 3}
+  - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
+  - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
+  - {fileID: 2941233175185989652, guid: f2c69d5e24cbfb549bdce24872a5827b, type: 3}
+  minTimeBetweenSpawns: 2
+  maxTimeBetweenSpawns: 5
+  canSpawn: 1
+  spawnTime: 30
+  spawnTimeStartTime: 30
+  enemiesInGame: 0
+  spawnerDone: 0
+  spawnedCrab: 0
+  _isCrabSpawner: 0
+--- !u!4 &906022558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906022556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.2978635, y: -0.46666247, z: 0.55070794}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &951654884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,7 +1943,7 @@ Transform:
   - {fileID: 204906595}
   - {fileID: 555492629}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &968548868
 GameObject:
@@ -2808,6 +2869,7 @@ MonoBehaviour:
   maxTimeBetweenSpawns: 10
   canSpawn: 1
   spawnTime: 30
+  spawnTimeStartTime: 0
   enemiesInGame: 0
   spawnerDone: 0
   spawnedCrab: 0
@@ -2827,7 +2889,7 @@ Transform:
   - {fileID: 951654886}
   - {fileID: 1412557}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1725845419
 GameObject:
@@ -2964,7 +3026,7 @@ RectTransform:
   - {fileID: 1598982988}
   - {fileID: 1210443753}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3434,7 +3496,7 @@ Transform:
   - {fileID: 972600537}
   - {fileID: 2143109455}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2115744027
 GameObject:

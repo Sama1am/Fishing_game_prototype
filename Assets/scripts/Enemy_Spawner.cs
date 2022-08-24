@@ -13,6 +13,7 @@ public class Enemy_Spawner : MonoBehaviour
     public float maxTimeBetweenSpawns;
     public bool canSpawn;
     public float spawnTime;
+    public float spawnTimeStartTime;
     public int enemiesInGame;
     public bool spawnerDone;
 
@@ -72,6 +73,8 @@ public class Enemy_Spawner : MonoBehaviour
 
         if(spawnerDone)
         {
+            spawnTime = spawnTimeStartTime;
+            canSpawn = true;
             Debug.Log("Spawning Complete");
         }
     }
