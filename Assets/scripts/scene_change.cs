@@ -15,4 +15,9 @@ public class scene_change : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
+    public void HomePage()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
 }
