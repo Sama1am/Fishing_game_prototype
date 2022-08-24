@@ -801,7 +801,6 @@ MonoBehaviour:
   - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
   - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
   - {fileID: 2941233175185989652, guid: f2c69d5e24cbfb549bdce24872a5827b, type: 3}
-  - {fileID: 6501253468929485777, guid: 396a8a5ba3f86c142b00ea6d64b27d27, type: 3}
   minTimeBetweenSpawns: 1
   maxTimeBetweenSpawns: 3
   canSpawn: 1
@@ -1727,7 +1726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 99.54999, y: -129.29999}
+  m_AnchoredPosition: {x: 99.54999, y: -127.5}
   m_SizeDelta: {x: 199.1, y: 81.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873413414
@@ -2253,7 +2252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 99.54999, y: 320.2}
+  m_AnchoredPosition: {x: 304.7, y: 499.04}
   m_SizeDelta: {x: 199.09998, y: 81.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156381322
@@ -2278,8 +2277,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+    m_PressedColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2386,7 +2385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -61.034973, y: -55.20999}
+  m_AnchoredPosition: {x: -61.034912, y: -55.20996}
   m_SizeDelta: {x: 122.06995, y: 110.41998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210443754
@@ -3170,8 +3169,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124, y: -0.21251}
-  m_SizeDelta: {x: 50.9, y: 81.505}
+  m_AnchoredPosition: {x: -0.000030041, y: -58.56}
+  m_SizeDelta: {x: 150.67, y: 36.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1950185712
 MonoBehaviour:
@@ -3195,8 +3194,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+    m_PressedColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3292,18 +3291,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989928146}
-  m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1950185711}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.29000092, y: 1.3300018}
-  m_SizeDelta: {x: 22.99, y: -37.56}
+  m_AnchoredPosition: {x: -1.300003, y: 0.040000916}
+  m_SizeDelta: {x: -12.05, y: -63.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989928148
 MonoBehaviour:
@@ -3325,7 +3324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Add
+  m_text: Put bait on
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bf943d82b479ea74480ce77f488e4060, type: 2}
   m_sharedMaterial: {fileID: -8138362654371034752, guid: bf943d82b479ea74480ce77f488e4060, type: 2}
@@ -3352,8 +3351,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 19
+  m_fontSizeBase: 19
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
