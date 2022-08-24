@@ -47,6 +47,10 @@ public class catchLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(baitNum < 0)
+        {
+            baitNum = 0;
+        }
         
         if(hasFish)
         {
@@ -63,11 +67,15 @@ public class catchLogic : MonoBehaviour
     {
         if(!hasBait)
         {
-            _Line.GetComponent<LineLogic>().isCut = false;
-            hasBait = true;
-            baitNum -= 1;
-            _SR.sprite = _hookSprites[1];
-            Debug.Log("SHOULD CHANGE HOOK SPRITE");
+            if(baitNum > 0)
+            {
+                _Line.GetComponent<LineLogic>().isCut = false;
+                hasBait = true;
+                baitNum -= 1;
+                _SR.sprite = _hookSprites[1];
+                Debug.Log("SHOULD CHANGE HOOK SPRITE");
+            }
+           
         }
        
     }

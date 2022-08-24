@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         setScoreUI();
         setbaitUi();
         setBaitCostUI();
-        //gameOver();
+        gameOver();
     }
 
 
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
-        if((points >= 0) && (CL.baitNum >= 0) && (CL.hasBait == false))
+        if((points <= 4) && (CL.baitNum == 0) && (CL.hasBait == false))
         {
             SceneManager.LoadScene(2);
         }
